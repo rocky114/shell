@@ -1,11 +1,14 @@
 # shell
 syntax on
+
 syntax off
 
 set number 
+
 set nonumber
 
 set autoindent
+
 set cindent
 
 基本显示
