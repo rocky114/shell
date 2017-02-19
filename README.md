@@ -16,4 +16,5 @@ set cindent
 echo -e 终端颜色+显示内容+结束后的颜色
 例：
 	echo -e "\e[1;30m Jeson say Hi~\e[1;0m"
+	
 	echo -e "\e[1;30m" "Josen say Hi~" $(tput sgr0)
