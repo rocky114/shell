@@ -31,3 +31,7 @@ sed -n '1,3p' sed.txt ##打印一到三行
 sed '^[dD]/s/x/X/g' sed.txt ##将所有以d或D开头的行的所有小写x变为大写X
 
 sed '1,3s/test/abc/' sed.txt ##将一到三行test替换成abc
+
+sed 's/test/&234/' sed.txt ## 将包含test位置后面增加234
+
+sed -n -e '1,2p' -e '4p' sed.txt ## 打印第一行，第二行，第四行 参数-e可以组合多个命令
