@@ -40,3 +40,5 @@ sed -i 's/test/xinzhu/g' sed.txt  ## -i 选项直接修改文本
 
 ##多个文件批量替换字符串
 find . -name '*.txt' | xargs sed -i 's/xinzhu/rocky/g'
+##或者
+find . -name '*.txt' -exec sed -i 's/xinzhu/rocky/g' {} \;
