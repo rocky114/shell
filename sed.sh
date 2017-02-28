@@ -35,3 +35,5 @@ sed '1,3s/test/abc/' sed.txt ##将一到三行test替换成abc
 sed 's/test/&234/' sed.txt ## 将包含test位置后面增加234
 
 sed -n -e '1,2p' -e '4p' sed.txt ## 打印第一行，第二行，第四行 参数-e可以组合多个命令
+
+sed -i 's/test/xinzhu/g' sed.txt  ## -i 选项直接修改文本
