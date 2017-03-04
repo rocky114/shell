@@ -1,0 +1,16 @@
+date -s "2017-01-12" ##设置系统时间为2017-01-12 00:00:00
+
+hwclock ##设置时间
+
+-r, --show         读取并打印硬件时钟（read hardware clock and print result ）
+-s, --hctosys      将硬件时钟同步到系统时钟（set the system time from the hardware clock ）
+-w, --systohc     将系统时钟同步到硬件时钟（set the hardware clock to the current system time ）
+
+ntpdate -u http://time1.aliyun.com ##同步网络时间，因国家时钟服务基本不可用，退而选择阿里云的服务
+http://time2.aliyun.com
+http://time3.aliyun.com
+http://time4.aliyun.com
+http://time5.aliyun.com
+http://time6.aliyun.com
+http://time7.aliyun.com
+
