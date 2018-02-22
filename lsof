@@ -1,0 +1,50 @@
+lsof 
+
+-i[46][protocol][@hostname|hostaddr][:service|port]
+
+46 specifies the IP version, IPv4 or IPv6
+that applies to the following address.
+'6' may be be specified only if the UNIX
+dialect supports IPv6.  If neither '4' nor
+'6' is specified, the following address
+applies to all IP versions.
+protocol is a protocol name - TCP, UDP
+hostname is an Internet host name.  Unless a
+specific IP version is specified, open
+network files associated with host names
+of all versions will be selected.
+hostaddr is a numeric Internet IPv4 address in
+dot form; or an IPv6 numeric address in
+colon form, enclosed in brackets, if the
+UNIX dialect supports IPv6.  When an IP
+version is selected, only its numeric
+addresses may be specified.
+service is an /etc/services name - e.g., smtp -
+or a list of them.
+port is a port number, or a list of them.
+
+-i6 - IPv6 only
+TCP:25 - TCP and port 25
+@1.2.3.4 - Internet IPv4 host address 1.2.3.4
+@[3ffe:1ebc::1]:1234 - Internet IPv6 host address
+    3ffe:1ebc::1, port 1234
+UDP:who - UDP who service port
+TCP@lsof.itap:513 - TCP, port 513 and host name lsof.itap
+tcp@foo:1-10,smtp,99 - TCP, ports 1 through 10,
+    service name smtp, port 99, host name foo
+tcp@bar:1-smtp - TCP, ports 1 through smtp, host bar
+:time - either TCP, UDP or UDPLITE time service port
+
+-c 指定进程名称 
+lsof -c '/memcac/' 列出包含memcac进程名称打开的文件
+lsof -c '^memcac' 列出不包含memcac进程打开的文件
+lsof -c memcache 列出包含memcache进程打开的文件
+
+
+lsof -n 不将IP转换为hostname，缺省是不加上-n参数
+lsof -i tcp@ohaha.ks.edu.tw:ftp -n
+lsof -p 12 看进程号为12的进程打开了哪些文件
+lsof +|-r [t] 控制lsof不断重复执行，缺省是15s刷新
+-r，lsof会永远不断的执行，直到收到中断信号
++r，lsof会一直执行，直到没有档案被显示
+-p 进程ID打开的文件
