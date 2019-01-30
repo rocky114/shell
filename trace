@@ -1,0 +1,10 @@
+strace: 跟踪系统调用
+ltrace: 跟踪库函数调用
+
+-f ：除了跟踪当前进程外，还跟踪其子进程。
+-o file ：将输出信息写到文件file中，而不是显示到标准错误输出（stderr）。
+-p pid ：绑定到一个由pid对应的正在运行的进程。此参数常用来调试后台进程。
+
+样例：
+strace -f -o vim.strace vim： 跟踪vim及其子进程的运行，将输出信息写到文件vim.strace。
+ltrace -p 234： 跟踪一个pid为234的已经在运行的进程
