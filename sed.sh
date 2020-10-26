@@ -38,6 +38,8 @@ sed -n -e '1,2p' -e '4p' sed.txt ## 打印第一行，第二行，第四行 参�
 
 sed -i 's/test/xinzhu/g' sed.txt  ## -i 选项直接修改文本
 
+sed -i -E "s/(<username>.+)name(.+<\/username>)/\1something\2/" file.xml
+
 ##多个文件批量替换字符串
 find . -name '*.txt' | xargs sed -i 's/xinzhu/rocky/g'
 ##或者
