@@ -1,0 +1,1 @@
+sort queries |uniq -c |sort -nr |head -50 ##
