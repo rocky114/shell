@@ -69,3 +69,8 @@ ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 193.233.7.24  #
 4. sport RELOP PORT
 5. autobound
 其中ADDRESS_PATTERN为ip地址与端口匹配，ip:port，可以用*代替。RELOP为<= >=或==。
+
+ss -lnt 
+Recv-Q：当前全连接队列的大小，也就是当前已完成三次握手并等待服务端 accept() 的 TCP 连接
+Send-Q：当前全连接最大队列长度，上面的输出结果说明监听 8088 端口的 TCP 服务，最大全连接长度为 128；
+
