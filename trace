@@ -8,3 +8,7 @@ ltrace: 跟踪库函数调用
 样例：
 strace -f -o vim.strace vim： 跟踪vim及其子进程的运行，将输出信息写到文件vim.strace。
 ltrace -p 234： 跟踪一个pid为234的已经在运行的进程
+
+
+sudo strace -T -e write,futex -s 2048 -p 31014
+
