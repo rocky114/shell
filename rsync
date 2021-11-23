@@ -1,1 +1,2 @@
-## rsync -av --remove-source-files --include="*.js.map" --exclude="*" ~/hg-frontend/.nuxt/client/ ~/sourcemap ##同步源目录js.map结尾文件，完成后删除源目录js.map结尾文件
+##同步源目录js.map结尾文件，完成后删除源目录js.map结尾文件
+## rsync -av --remove-source-files --include="*.js.map" --exclude="*" ~/hg-frontend/.nuxt/client/ ~/sourcemap 
